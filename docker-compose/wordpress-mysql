@@ -1,0 +1,15 @@
+wordpress_db:
+  image: hu/mysqltest:0.0.1 
+  ports:
+    - 3306:3306
+  volumes:
+    - ./data:/docker-entrypoint-initdb.d
+  environment:
+    MYSQL_ROOT_PASSWORD: root
+
+wordpress3:
+  image: final 
+  links:
+    - wordpress_db:mysql
+  ports:
+    - 80:80
