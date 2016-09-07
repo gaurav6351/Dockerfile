@@ -1,5 +1,5 @@
 wordpress_db:
-  image: hu/mysqltest:0.0.1 
+  image: mysql 
   ports:
     - 3306:3306
   volumes:
@@ -8,8 +8,8 @@ wordpress_db:
     MYSQL_ROOT_PASSWORD: root
 
 wordpress3:
-  image: final 
+  build: . 
   links:
     - wordpress_db:mysql
   ports:
-    - 80:80
+    - 80:80 
