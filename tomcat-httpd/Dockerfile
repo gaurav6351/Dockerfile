@@ -5,8 +5,8 @@ RUN yum -y update && \
  
 RUN yum -y install java-1.7.0-openjdk.x86_64
  
-RUN mkdir /home/investor
-WORKDIR /home/investor
+RUN mkdir /home/inv
+WORKDIR /home/inv
 RUN wget http://archive.apache.org/dist/tomcat/tomcat-8/v8.0.30/bin/apache-tomcat-8.0.30.tar.gz
 RUN tar -xvf apache-tomcat-8.0.30.tar.gz
 
